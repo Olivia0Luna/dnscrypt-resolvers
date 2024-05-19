@@ -108,7 +108,7 @@ while read -r stamp; do
     echo
 
     dnssec=false
-    if $DNSCRYPT_PROXY -config "$CONFIG" -list -json | grep -F '"dnssec": true' >/dev/null; then
+    if ./dnscrypt-proxy -config "$CONFIG" -list -json | grep -F '"dnssec": true' >/dev/null; then
         dnssec=true
         echo "DNSSEC support is expected"
     else
